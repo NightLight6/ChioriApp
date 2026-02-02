@@ -1,0 +1,28 @@
+﻿<Window x:Class="ChioriApp.AddUserWindow"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="Добавить пользователя" Height="350" Width="350">
+    <Grid Margin="15">
+        <StackPanel>
+            <TextBlock Text="Логин:" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtUsername" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Пароль:" Margin="0,0,0,5"/>
+            <PasswordBox x:Name="txtPassword" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Email:" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtEmail" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Телефон:" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtPhone" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Роль:" Margin="0,0,0,5"/>
+            <ComboBox x:Name="cmbRole" DisplayMemberPath="Title" SelectedValuePath="RoleId" Margin="0,0,0,20"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Отмена" Click="BtnCancel_Click" Margin="0,0,10,0" Padding="10,5"/>
+                <Button Content="Создать" Click="BtnCreate_Click" Padding="10,5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

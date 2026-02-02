@@ -1,0 +1,22 @@
+﻿<Window x:Class="ChioriApp.CatalogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Каталог товаров — Чиори" Height="600" Width="900">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <Button Content="Назад" Click="BtnBack_Click" Padding="8,4" Margin="0,0,10,0"/>
+            <Button Content="Личный кабинет" Click="BtnCabinet_Click" Padding="8,4" Margin="0,0,10,0"/>
+            <TextBox x:Name="txtSearch" Width="200" Margin="0,0,10,0" TextChanged="TxtSearch_TextChanged"/>
+            <Button Content="Корзина" Click="BtnCart_Click" Padding="8,4"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <WrapPanel x:Name="wrapProducts" ItemWidth="200" ItemHeight="250"/>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿ChioriApp
+
+
+winexe
+C#
+.cs
+C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\
+ChioriApp
+none
+false
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\App.xaml
+18-1197062906
+
+39395139230
+216432437011
+AddProductWindow.xaml;AddUserWindow.xaml;AdminWindow.xaml;CatalogWindow.xaml;CheckoutDetailsWindow.xaml;CheckoutWindow.xaml;CustomerWindow.xaml;EditCustomerWindow.xaml;EditOrderWindow.xaml;EditProductWindow.xaml;MainWindow.xaml;ManagerOrdersWindow.xaml;ManagerWindow.xaml;MyOrdersWindow.xaml;OrderDetailsWindow.xaml;PersonalCabinetWindow.xaml;RegisterWindow.xaml;UserEditWindow.xaml;
+
+False
+

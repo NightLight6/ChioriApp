@@ -1,0 +1,13 @@
+﻿<Window x:Class="ChioriApp.CustomerWindow"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="Клиент — Чиори" Height="400" Width="600">
+    <Grid Margin="15">
+        <StackPanel>
+            <TextBlock Text="Здравствуйте! Вы в личном кабинете." FontSize="18" Margin="0,0,0,20"/>
+            <Button Content="Каталог товаров" Click="BtnCatalog_Click" Padding="10" Margin="0,0,0,10"/>
+            <Button Content="Мои заказы" Click="BtnMyOrders_Click" Padding="10" Margin="0,0,0,10"/>
+            <Button Content="Выход" Click="BtnLogout_Click" Padding="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

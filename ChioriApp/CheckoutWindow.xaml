@@ -1,0 +1,30 @@
+﻿<Window x:Class="ChioriApp.CheckoutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Оформление заказа" Height="500" Width="600">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Корзина" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <DataGrid x:Name="dgBasket" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True"
+                  CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Товар" Binding="{Binding ProductName}" Width="*"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price, StringFormat=F2}" Width="80"/>
+                <DataGridTextColumn Header="Кол-во" Binding="{Binding Quantity}" Width="60"/>
+                <DataGridTextColumn Header="Итого" Binding="{Binding Total, StringFormat=F2}" Width="80"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <TextBlock Text="Итого:" FontWeight="Bold" Margin="0,0,10,0"/>
+            <TextBlock x:Name="lblTotal" Text="0.00" FontWeight="Bold" Margin="0,0,20,0"/>
+            <Button Content="Оформить заказ" Click="BtnPlaceOrder_Click" Padding="10,5" Background="Green" Foreground="White"/>
+        </StackPanel>
+    </Grid>
+</Window>
