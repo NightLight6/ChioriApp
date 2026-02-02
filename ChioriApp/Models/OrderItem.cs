@@ -23,7 +23,7 @@ namespace ChioriApp.Models
         public decimal PriceAtOrder { get; set; }
 
         [Column("subtotal")]
-        public decimal Subtotal { get; set; }
+        public decimal Subtotal { get; set; } = 0m;
 
         [ForeignKey("OrderId")]
         public virtual Order Order { get; set; } = null!;

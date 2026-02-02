@@ -33,14 +33,19 @@ namespace ChioriApp
 
             txtFirstName.Text = customer.FirstName;
             txtLastName.Text = customer.LastName;
+            txtPatronymic.Text = customer.Patronymic ?? "";
+            dpBirthDate.SelectedDate = customer.BirthDate;
             txtEmail.Text = customer.User?.Email ?? "";
             txtPhone.Text = customer.User?.Phone ?? "";
+
+            lblRegistrationDate.Text = customer.RegistrationDate.ToString("dd.MM.yyyy");
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             string firstName = txtFirstName.Text.Trim();
             string lastName = txtLastName.Text.Trim();
+            string patronymic = txtPatronymic.Text.Trim();
             string email = txtEmail.Text.Trim();
             string phone = txtPhone.Text.Trim();
 
@@ -58,6 +63,8 @@ namespace ChioriApp
 
             customer.FirstName = firstName;
             customer.LastName = lastName;
+            customer.Patronymic = string.IsNullOrWhiteSpace(patronymic) ? null : patronymic;
+            customer.BirthDate = dpBirthDate.SelectedDate;
 
             if (customer.User == null)
             {
@@ -71,7 +78,7 @@ namespace ChioriApp
             try
             {
                 _context.SaveChanges();
-                MessageBox.Show("Клиент обновлён!");
+                MessageBox.Show("Клиент обновлён!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                 DialogResult = true;
                 Close();
             }

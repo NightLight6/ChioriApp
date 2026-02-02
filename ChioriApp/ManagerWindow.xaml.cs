@@ -19,16 +19,27 @@ namespace ChioriApp
         }
         private void LoadOrders()
         {
-            dgOrders.ItemsSource = _context.Orders
-                .Select(o => new OrderListItem
-                {
-                    OrderId = o.OrderId,
-                    CustomerId = o.CustomerId,
-                    TotalAmount = o.TotalAmount,
-                    StatusId = o.StatusId,
-                    OrderDate = o.OrderDate
-                })
-                .ToList();
+            var orders = _context.Orders.ToList();
+            var customers = _context.Customers.ToDictionary(c => c.CustomerId);
+
+            dgOrders.ItemsSource = orders.Select(o => new OrderListItem
+            {
+                OrderId = o.OrderId,
+                OrderNumber = o.OrderNumber,
+                CustomerId = o.CustomerId,
+                CustomerFirstName = customers.TryGetValue(o.CustomerId, out var c) ? c.FirstName : "—",
+                CustomerLastName = customers.TryGetValue(o.CustomerId, out var c2) ? c2.LastName : "—",
+                CustomerPatronymic = customers.TryGetValue(o.CustomerId, out var c3) ? c3.Patronymic ?? "—" : "—",
+                ContactPhone = o.ContactPhone,
+                ContactEmail = o.ContactEmail,
+                DeliveryAddress = o.DeliveryAddress,
+                TotalAmount = o.TotalAmount,
+                FinalAmount = o.FinalAmount,
+                StatusId = o.StatusId,
+                PaymentMethodId = o.PaymentMethodId,
+                DeliveryMethodId = o.DeliveryMethodId,
+                OrderDate = o.OrderDate
+            }).ToList();
         }
 
         private void BtnRefreshOrders_Click(object sender, RoutedEventArgs e) => LoadOrders();
@@ -47,7 +58,14 @@ namespace ChioriApp
             if (dgOrders.SelectedItem is OrderListItem item)
             {
                 this.Hide();
-                new EditOrderWindow(item.OrderId).Show();
+                var editWindow = new EditOrderWindow(item.OrderId);
+                bool? result = editWindow.ShowDialog();
+                this.Show();
+
+                if (result == true)
+                {
+                    LoadOrders();
+                }
             }
         }
 
@@ -82,7 +100,14 @@ namespace ChioriApp
             if (dgProducts.SelectedItem is ProductListItem item)
             {
                 this.Hide();
-                new EditProductWindow(item.ProductId).Show();
+                var editWin = new EditProductWindow(item.ProductId);
+                bool? result = editWin.ShowDialog();
+                this.Show();
+
+                if (result == true)
+                {
+                    LoadProducts();
+                }
             }
         }
 
@@ -113,26 +138,38 @@ namespace ChioriApp
         }
         private void LoadCustomers()
         {
-            var customers = _context.Customers
-                .Include(c => c.User)
-                .ToList();
-
-            var customerList = customers.Select(c =>
+            try
             {
-                var orders = _context.Orders.Where(o => o.CustomerId == c.CustomerId).ToList();
-                return new CustomerListItem
-                {
-                    CustomerId = c.CustomerId,
-                    FirstName = c.FirstName,
-                    LastName = c.LastName,
-                    Email = c.User?.Email ?? "—",
-                    Phone = c.User?.Phone ?? "—",
-                    OrderCount = orders.Count,
-                    OrderIds = string.Join(", ", orders.Select(o => o.OrderId))
-                };
-            }).ToList();
+                var customers = _context.Customers
+                    .AsNoTracking()
+                    .Include(c => c.User)
+                    .ToList();
 
-            dgCustomers.ItemsSource = customerList;
+                var customerList = customers.Select(c =>
+                {
+                    var orders = _context.Orders
+                        .AsNoTracking()
+                        .Where(o => o.CustomerId == c.CustomerId)
+                        .ToList();
+
+                    return new CustomerListItem
+                    {
+                        CustomerId = c.CustomerId,
+                        FirstName = c.FirstName,
+                        LastName = c.LastName,
+                        Patronymic = c.Patronymic ?? "—",
+                        Email = c.User?.Email ?? "—",
+                        Phone = c.User?.Phone ?? "—",
+                        OrderCount = orders.Count
+                    };
+                }).ToList();
+
+                dgCustomers.ItemsSource = customerList;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при загрузке клиентов: {ex.Message}");
+            }
         }
 
         private void BtnRefreshCustomers_Click(object sender, RoutedEventArgs e) => LoadCustomers();
@@ -142,7 +179,15 @@ namespace ChioriApp
             if (dgCustomers.SelectedItem is CustomerListItem item)
             {
                 this.Hide();
-                new EditCustomerWindow(item.CustomerId).Show();
+                var editWindow = new EditCustomerWindow(item.CustomerId);
+                bool? result = editWindow.ShowDialog();
+
+                this.Show();
+
+                if (result == true)
+                {
+                    LoadCustomers();
+                }
             }
         }
 

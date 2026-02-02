@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace ChioriApp
 {
@@ -7,6 +8,7 @@ namespace ChioriApp
     {
         public string FirstName => txtFirstName?.Text?.Trim() ?? string.Empty;
         public string LastName => txtLastName?.Text?.Trim() ?? string.Empty;
+        public string Patronymic => txtPatronymic?.Text?.Trim() ?? string.Empty;
         public string Phone => txtPhone?.Text?.Trim() ?? string.Empty;
         public string Email => txtEmail?.Text?.Trim() ?? string.Empty;
         public string Address => txtAddress?.Text?.Trim() ?? string.Empty;
@@ -43,11 +45,27 @@ namespace ChioriApp
                 lblError.Text = "Адрес доставки обязателен.";
                 return;
             }
+            if (DeliveryMethodId <= 0 || DeliveryMethodId > 2)
+            {
+                lblError.Text = "Выберите способ доставки.";
+                return;
+            }
+            if (PaymentMethodId <= 0 || PaymentMethodId > 2)
+            {
+                lblError.Text = "Выберите способ оплаты.";
+                return;
+            }
 
             DialogResult = true;
             Close();
         }
+        public int DeliveryMethodId =>
+    cmbDeliveryMethod.SelectedItem is ComboBoxItem item && int.TryParse(item.Tag?.ToString(), out int id) ? id : 1;
 
+        public int PaymentMethodId =>
+            cmbPaymentMethod.SelectedItem is ComboBoxItem item2 && int.TryParse(item2.Tag?.ToString(), out int id2) ? id2 : 1;
+
+        public string Comments => txtComments?.Text?.Trim() ?? string.Empty;
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;

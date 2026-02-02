@@ -13,11 +13,7 @@
 
             <Button Content="Регистрация" Click="BtnRegister_Click" Padding="10" Cursor="Hand"/>
 
-            <TextBlock x:Name="lblError" 
-                       Foreground="Red" 
-                       TextWrapping="Wrap" 
-                       Margin="0,15,0,0"
-                       TextAlignment="Center"/>
+            <TextBlock x:Name="lblError"  Foreground="Red"  TextWrapping="Wrap" Margin="0,15,0,0" TextAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Window>

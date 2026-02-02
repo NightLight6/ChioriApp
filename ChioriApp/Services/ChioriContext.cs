@@ -28,6 +28,7 @@ namespace ChioriApp.Services
             modelBuilder.Entity<OrderItem>().ToTable("order_items");
             modelBuilder.Entity<Customer>().ToTable("customers");
             modelBuilder.Entity<OrderItem>().Property(oi => oi.Subtotal).HasDefaultValue(0m);
+            modelBuilder.Entity<Customer>().HasOne(c => c.User).WithMany(u => u.Customers).HasForeignKey(c => c.UserId).IsRequired(false);
 
 
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())

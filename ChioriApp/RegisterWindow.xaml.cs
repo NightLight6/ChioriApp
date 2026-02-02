@@ -54,6 +54,7 @@ namespace ChioriApp
         {
             string firstName = txtFirstName.Text.Trim();
             string lastName = txtLastName.Text.Trim();
+            string patronymic = txtpatronymic.Text.Trim();
             string login = txtLogin.Text.Trim();
             string password = txtPassword.Password.Trim();
             string email = txtEmail.Text.Trim();
@@ -118,6 +119,8 @@ namespace ChioriApp
                     UserId = newUser.UserId,
                     FirstName = firstName,
                     LastName = lastName,
+                    Patronymic = string.IsNullOrWhiteSpace(patronymic) ? null : patronymic,
+                    BirthDate = dpBirthDate.SelectedDate,
                     RegistrationDate = DateTime.UtcNow
                 };
                 _context.Customers.Add(customer);

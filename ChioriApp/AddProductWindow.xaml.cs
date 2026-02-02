@@ -1,6 +1,7 @@
 ﻿using ChioriApp.Models;
 using ChioriApp.Services;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace ChioriApp
 {
@@ -11,12 +12,15 @@ namespace ChioriApp
         public AddProductWindow()
         {
             InitializeComponent();
+            cmbStatus.SelectedIndex = 0;
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             string article = txtArticle.Text.Trim();
             string name = txtName.Text.Trim();
+            string description = txtDescription.Text.Trim();
+
             if (string.IsNullOrWhiteSpace(article) || string.IsNullOrWhiteSpace(name))
             {
                 lblError.Text = "Артикул и название обязательны.";
@@ -29,16 +33,24 @@ namespace ChioriApp
                 return;
             }
 
+            int statusId = 1;
+            if (cmbStatus.SelectedItem is ComboBoxItem selectedItem &&
+                int.TryParse(selectedItem.Tag?.ToString(), out int selectedStatus))
+            {
+                statusId = selectedStatus;
+            }
+
             var product = new Product
             {
                 Article = article,
                 Name = name,
+                Description = description,
                 RecommendedPrice = price,
                 CategoryId = 1,
                 ManufacturerId = 1,
                 SupplierId = 1,
                 UnitId = 1,
-                StatusId = 1
+                StatusId = statusId
             };
 
             try

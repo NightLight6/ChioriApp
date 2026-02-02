@@ -33,11 +33,16 @@
                             </Style>
                         </DataGrid.RowStyle>
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="ID" Binding="{Binding OrderId}" Width="60"/>
-                            <DataGridTextColumn Header="Клиент ID" Binding="{Binding CustomerId}" Width="80"/>
-                            <DataGridTextColumn Header="Сумма" Binding="{Binding TotalAmount, StringFormat=F2}" Width="80"/>
-                            <DataGridTextColumn Header="Статус" Binding="{Binding StatusId}" Width="100"/>
-                            <DataGridTextColumn Header="Дата" Binding="{Binding OrderDate, StringFormat=d}" Width="100"/>
+                            <DataGridTextColumn Header="№" Binding="{Binding OrderNumber}" Width="100"/>
+                            <DataGridTextColumn Header="Клиент" Binding="{Binding ClientFullName}" Width="200"/>
+                            <DataGridTextColumn Header="Телефон" Binding="{Binding ContactPhone}" Width="120"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding ContactEmail}" Width="180"/>
+                            <DataGridTextColumn Header="Адрес" Binding="{Binding DeliveryAddress}" Width="200"/>
+                            <DataGridTextColumn Header="Сумма" Binding="{Binding FinalAmount, StringFormat=F2}" Width="80"/>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding StatusId}" Width="70"/>
+                            <DataGridTextColumn Header="Оплата" Binding="{Binding PaymentMethodId}" Width="70"/>
+                            <DataGridTextColumn Header="Доставка" Binding="{Binding DeliveryMethodId}" Width="80"/>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding OrderDate, StringFormat=d}" Width="90"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -45,11 +50,15 @@
 
             <TabItem Header="Товары">
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="68*"/>
+                        <ColumnDefinition Width="319*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10" Grid.ColumnSpan="2">
                         <Button Content="Добавить товар" Click="BtnAddProduct_Click" Padding="8,4" Margin="0,0,10,0"/>
                         <Button Content="Обновить список" Click="BtnRefreshProducts_Click" Padding="8,4"/>
                     </StackPanel>
@@ -58,7 +67,7 @@
                               AutoGenerateColumns="False"
                               IsReadOnly="True"
                               CanUserAddRows="False"
-                              SelectionUnit="FullRow">
+                              SelectionUnit="FullRow" Grid.ColumnSpan="2">
                         <DataGrid.Resources>
                             <ContextMenu x:Key="ProductsContextMenu">
                                 <MenuItem Header="Редактировать" Click="BtnEditProduct_Click"/>
@@ -92,7 +101,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button Content="Обновить список" Click="BtnRefreshCustomers_Click" Padding="8,4" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,0,0,409" Grid.RowSpan="2"/>
+                    <Button Content="Обновить список"  Click="BtnRefreshCustomers_Click"  Padding="8,4"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,10"/>
                     <DataGrid x:Name="dgCustomers"
                               Grid.Row="1"
                               AutoGenerateColumns="False"
@@ -112,8 +121,9 @@
                         </DataGrid.RowStyle>
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding CustomerId}" Width="60"/>
-                            <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" Width="120"/>
                             <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" Width="120"/>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" Width="120"/>
+                            <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}" Width="120"/>
                             <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="180"/>
                             <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="120"/>
                             <DataGridTextColumn Header="Заказы" Binding="{Binding OrderCount}" Width="80"/>

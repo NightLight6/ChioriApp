@@ -1,4 +1,5 @@
-﻿using ChioriApp.Models;
+﻿#nullable disable
+using ChioriApp.Models;
 using ChioriApp.Services;
 using System.Linq;
 using System.Windows;
@@ -47,15 +48,39 @@ namespace ChioriApp
             {
                 var orderNumber = $"CH-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid().ToString("N")[..6].ToUpper()}";
 
-                var customer = new Customer
-                {
-                    FirstName = detailsWindow.FirstName,
-                    LastName = detailsWindow.LastName,
-                    RegistrationDate = DateTime.UtcNow,
-                    UserId = null
-                };
+                Customer customer;
+                int? userId = _userId;
 
-                _context.Customers.Add(customer);
+                if (userId.HasValue)
+                {
+                    var safeUserId = userId.Value;
+                    customer = _context.Customers.FirstOrDefault(c => c.UserId == safeUserId);
+                    if (customer == null)
+                    {
+                        customer = new Customer
+                        {
+                            UserId = safeUserId,
+                            FirstName = detailsWindow.FirstName,
+                            LastName = detailsWindow.LastName,
+                            Patronymic = detailsWindow.Patronymic,
+                            RegistrationDate = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Unspecified)
+                        };
+                        _context.Customers.Add(customer);
+                    }
+                }
+                else
+                {
+                    customer = new Customer
+                    {
+                        UserId = _userId.GetValueOrDefault(0),
+                        FirstName = detailsWindow.FirstName,
+                        LastName = detailsWindow.LastName,
+                        Patronymic = detailsWindow.Patronymic,
+                        RegistrationDate = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Unspecified)
+                    };
+                    _context.Customers.Add(customer);
+                }
+
                 _context.SaveChanges();
 
                 var order = new Order
@@ -63,8 +88,9 @@ namespace ChioriApp
                     OrderNumber = orderNumber,
                     CustomerId = customer.CustomerId,
                     StatusId = 1,
-                    DeliveryMethodId = 1,
-                    PaymentMethodId = 1,
+                    DeliveryMethodId = detailsWindow.DeliveryMethodId,
+                    PaymentMethodId = detailsWindow.PaymentMethodId,
+                    Comments = detailsWindow.Comments,
                     DeliveryAddress = detailsWindow.Address,
                     ContactName = $"{detailsWindow.FirstName} {detailsWindow.LastName}",
                     ContactPhone = detailsWindow.Phone,
@@ -89,7 +115,6 @@ namespace ChioriApp
                         ProductId = item.ProductId,
                         Quantity = qty,
                         PriceAtOrder = price,
-                        Subtotal = subtotal
                     });
                 }
 

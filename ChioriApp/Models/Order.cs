@@ -50,7 +50,25 @@ namespace ChioriApp.Models
         public int PaymentMethodId { get; set; }
 
         [Column("order_date")]
-        public DateTime OrderDate { get; set; } = DateTime.UtcNow;
+        public DateTime OrderDate { get; set; }
+
+        [Column("pickup_code")]
+        public string? PickupCode { get; set; }
+
+        [Column("comments")]
+        public string? Comments { get; set; }
+
+        [Column("planned_delivery_date")]
+        public DateTime? PlannedDeliveryDate { get; set; }
+
+        [Column("actual_delivery_date")]
+        public DateTime? ActualDeliveryDate { get; set; }
+
+        [Column("discount_amount")]
+        public decimal DiscountAmount { get; set; }
+
+        [ForeignKey("CustomerId")]
+        public virtual Customer? Customer { get; set; }
 
         public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }

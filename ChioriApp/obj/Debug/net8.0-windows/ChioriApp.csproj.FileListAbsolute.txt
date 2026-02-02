@@ -108,6 +108,7 @@ C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\ManagerWindow.baml
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\MyOrdersWindow.baml
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\OrderDetailsWindow.baml
+C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\PersonalCabinetWindow.baml
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\RegisterWindow.baml
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\UserEditWindow.baml
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\App.baml
@@ -126,6 +127,7 @@ C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\ManagerWindow.g.cs
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\MyOrdersWindow.g.cs
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\OrderDetailsWindow.g.cs
+C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\PersonalCabinetWindow.g.cs
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\RegisterWindow.g.cs
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\UserEditWindow.g.cs
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\App.g.cs
@@ -135,11 +137,10 @@ C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\ChioriApp.AssemblyInfoInputs.cache
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\ChioriApp.AssemblyInfo.cs
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\ChioriApp.csproj.CoreCompileInputs.cache
+C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\ChioriApp.sourcelink.json
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\ChioriApp.csproj.Up2Date
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\ChioriApp.dll
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\refint\ChioriApp.dll
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\ChioriApp.pdb
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\ChioriApp.genruntimeconfig.cache
 C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\ref\ChioriApp.dll
-C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\PersonalCabinetWindow.baml
-C:\Users\XIII\Desktop\Учебная практика 2\ChioriApp\ChioriApp\obj\Debug\net8.0-windows\PersonalCabinetWindow.g.cs

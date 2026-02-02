@@ -11,7 +11,7 @@ namespace ChioriApp.Models
         public int CustomerId { get; set; }
 
         [Column("user_id")]
-        public int? UserId { get; set; }
+        public int UserId { get; set; }
 
         [Required]
         [Column("first_name")]

@@ -27,6 +27,9 @@ namespace ChioriApp.Models
         [Column("phone")]
         public string? Phone { get; set; }
 
+        [Column("created_at")]
+        public DateTime Created_at { get; set; } = DateTime.UtcNow;
+
         [Column("account_status_id")]
         public int AccountStatusId { get; set; } = 1;
 
@@ -35,5 +38,9 @@ namespace ChioriApp.Models
 
         [ForeignKey("RoleId")]
         public virtual Role Role { get; set; } = null!;
+
+        [ForeignKey("UserId")]
+        public virtual Customer? Customer { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();
     }
 }

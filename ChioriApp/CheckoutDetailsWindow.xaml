@@ -1,7 +1,7 @@
 ﻿<Window x:Class="ChioriApp.CheckoutDetailsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Данные для заказа" Height="450" Width="400"
+        Title="Данные для заказа" Height="600" Width="400"
         WindowStartupLocation="CenterOwner">
     <Grid Margin="15">
         <StackPanel>
@@ -11,6 +11,9 @@
             <TextBlock Text="Фамилия:" Margin="0,0,0,5"/>
             <TextBox x:Name="txtLastName" Margin="0,0,0,10"/>
 
+            <TextBlock Text="Отчество (Необязательно):" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtPatronymic" Margin="0,0,0,10"/>
+
             <TextBlock Text="Телефон:" Margin="0,0,0,5"/>
             <TextBox x:Name="txtPhone" Margin="0,0,0,10"/>
 
@@ -19,6 +22,21 @@
 
             <TextBlock Text="Адрес доставки:" Margin="0,0,0,5"/>
             <TextBox x:Name="txtAddress" TextWrapping="Wrap" AcceptsReturn="True" Height="80" Margin="0,0,0,10"/>
+            
+            <TextBlock Text="Способ доставки:" Margin="0,0,0,5"/>
+            <ComboBox x:Name="cmbDeliveryMethod" Margin="0,0,0,10">
+                <ComboBoxItem Content="Курьер" Tag="1"/>
+                <ComboBoxItem Content="Самовывоз" Tag="2"/>
+            </ComboBox>
+
+            <TextBlock Text="Способ оплаты:" Margin="0,0,0,5"/>
+            <ComboBox x:Name="cmbPaymentMethod" Margin="0,0,0,10">
+                <ComboBoxItem Content="Онлайн" Tag="1"/>
+                <ComboBoxItem Content="Наличными" Tag="2"/>
+            </ComboBox>
+
+            <TextBlock Text="Комментарий к заказу (Необязательно):" Margin="0,0,0,5"/>
+            <TextBox x:Name="txtComments" TextWrapping="Wrap" AcceptsReturn="True" Height="60" Margin="0,0,0,10"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Content="Подтвердить" Click="BtnConfirm_Click" Padding="10,5" Margin="0,0,10,0"/>
