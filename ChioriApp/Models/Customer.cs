@@ -31,7 +31,8 @@ namespace ChioriApp.Models
         public DateTime RegistrationDate { get; set; }
 
         [ForeignKey("UserId")]
-        public virtual User? User { get; set; }
+        public virtual User User { get; set; } = null!;
+
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

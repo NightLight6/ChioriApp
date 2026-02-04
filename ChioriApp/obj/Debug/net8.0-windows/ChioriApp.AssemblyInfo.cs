@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChioriApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+134bf9a89d05b3e1630ba525398b92c9db789cc7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8495859a7ddc7f5e9609d3d50e989e4dc6956a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChioriApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChioriApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,40 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\managerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\managerwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\adminwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\managerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\managerwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\models\\customerlistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\models\\customerlistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\services\\chioricontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\services\\chioricontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\checkoutwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\checkoutwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\checkoutwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\checkoutwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|c:\\users\\xiii\\desktop\\\u0443\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\chioriapp\\chioriapp\\adminwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB5ACE34-1665-4BAB-8BB2-2BBE6F7AF673}|ChioriApp\\ChioriApp.csproj|solutionrelative:chioriapp\\adminwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,122 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ManagerWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\ManagerWindow.xaml.cs",
-              "RelativeDocumentMoniker": "ChioriApp\\ManagerWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\ManagerWindow.xaml.cs",
-              "RelativeToolTip": "ChioriApp\\ManagerWindow.xaml.cs",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAqwKcAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:06:32.185Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Models\\User.cs",
-              "RelativeDocumentMoniker": "ChioriApp\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Models\\User.cs",
-              "RelativeToolTip": "ChioriApp\\Models\\User.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAwwCsAAABcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T12:16:10.464Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CheckoutWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\CheckoutWindow.xaml",
-              "RelativeDocumentMoniker": "ChioriApp\\CheckoutWindow.xaml",
-              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\CheckoutWindow.xaml",
-              "RelativeToolTip": "ChioriApp\\CheckoutWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-02T12:07:55.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OrderItem.cs",
-              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Models\\OrderItem.cs",
-              "RelativeDocumentMoniker": "ChioriApp\\Models\\OrderItem.cs",
-              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Models\\OrderItem.cs",
-              "RelativeToolTip": "ChioriApp\\Models\\OrderItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T11:56:08.782Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChioriContext.cs",
-              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Services\\ChioriContext.cs",
-              "RelativeDocumentMoniker": "ChioriApp\\Services\\ChioriContext.cs",
-              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Services\\ChioriContext.cs",
-              "RelativeToolTip": "ChioriApp\\Services\\ChioriContext.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAywB4AAAB3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T11:47:30.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "ChioriApp\\Models\\Order.cs",
-              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Models\\Order.cs",
-              "RelativeToolTip": "ChioriApp\\Models\\Order.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAswEYAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T11:42:38.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CustomerListItem.cs",
-              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Models\\CustomerListItem.cs",
-              "RelativeDocumentMoniker": "ChioriApp\\Models\\CustomerListItem.cs",
-              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Models\\CustomerListItem.cs",
-              "RelativeToolTip": "ChioriApp\\Models\\CustomerListItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T11:42:36.387Z",
+              "Title": "AdminWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\AdminWindow.xaml",
+              "RelativeDocumentMoniker": "ChioriApp\\AdminWindow.xaml",
+              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\AdminWindow.xaml",
+              "RelativeToolTip": "ChioriApp\\AdminWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-04T16:31:15.913Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Models\\Customer.cs",
-              "RelativeDocumentMoniker": "ChioriApp\\Models\\Customer.cs",
-              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\Models\\Customer.cs",
-              "RelativeToolTip": "ChioriApp\\Models\\Customer.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAewCEAAAAcAAAAAAAAAA==",
+              "Title": "ManagerWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\ManagerWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ChioriApp\\ManagerWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\ManagerWindow.xaml.cs",
+              "RelativeToolTip": "ChioriApp\\ManagerWindow.xaml.cs",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAuwOwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T11:42:32.501Z",
+              "WhenOpened": "2026-02-04T16:06:34.083Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CheckoutWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\CheckoutWindow.xaml.cs",
-              "RelativeDocumentMoniker": "ChioriApp\\CheckoutWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\CheckoutWindow.xaml.cs",
-              "RelativeToolTip": "ChioriApp\\CheckoutWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHYAAAARAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ManagerWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\ManagerWindow.xaml",
+              "RelativeDocumentMoniker": "ChioriApp\\ManagerWindow.xaml",
+              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\ManagerWindow.xaml",
+              "RelativeToolTip": "ChioriApp\\ManagerWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-04T16:06:31.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\AdminWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ChioriApp\\AdminWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\XIII\\Desktop\\\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u043F\u0440\u0430\u043A\u0442\u0438\u043A\u0430 2\\ChioriApp\\ChioriApp\\AdminWindow.xaml.cs",
+              "RelativeToolTip": "ChioriApp\\AdminWindow.xaml.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAIwIwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T11:37:30.248Z",
+              "WhenOpened": "2026-02-04T15:43:06.385Z",
               "EditorCaption": ""
             }
           ]

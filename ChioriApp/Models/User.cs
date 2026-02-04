@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data;
 
 namespace ChioriApp.Models
 {
@@ -39,8 +38,7 @@ namespace ChioriApp.Models
         [ForeignKey("RoleId")]
         public virtual Role Role { get; set; } = null!;
 
-        [ForeignKey("UserId")]
-        public virtual Customer? Customer { get; set; }
+        // УДАЛЕНО: public virtual Customer? Customer { get; set; }
         public virtual ICollection<Customer> Customers { get; set; } = new List<Customer>();
     }
 }

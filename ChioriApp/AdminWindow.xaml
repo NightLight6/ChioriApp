@@ -16,16 +16,16 @@
         <DataGrid x:Name="dgUsers" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True"
                   SelectionMode="Single" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding UserId}" Width="50"/>
-                <DataGridTextColumn Header="Логин" Binding="{Binding Username}" Width="120"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="180"/>
-                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="120"/>
-                <DataGridTextColumn Header="Имя" Binding="{Binding Customer.FirstName}" Width="100"/>
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding Customer.LastName}" Width="100"/>
-                <DataGridTextColumn Header="Отчество" Binding="{Binding Customer.Patronymic}" Width="100"/>
-                <DataGridTextColumn Header="Роль" Binding="{Binding Role.RoleName}" Width="120"/>
-                <DataGridTextColumn Header="Статус" Binding="{Binding AccountStatusId}" Width="80"/>
-                <DataGridTextColumn Header="Дата регистрации" Binding="{Binding Created_at, StringFormat=d}" Width="120"/>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Логин}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Телефон}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Имя}"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Фамилия}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Отчество}"/>
+                <DataGridTextColumn Header="Роль" Binding="{Binding Роль}"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Статус}"/>
+                <DataGridTextColumn Header="Дата регистрации" Binding="{Binding Дата_регистрации, StringFormat={}{0:dd.MM.yyyy}}"/>
             </DataGrid.Columns>
 
             <DataGrid.Resources>

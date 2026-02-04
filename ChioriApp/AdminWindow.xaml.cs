@@ -19,28 +19,46 @@ namespace ChioriApp
 
         private void LoadUsers()
         {
-            var adminRoleId = _context.Roles.First(r => r.RoleName == "Администратор").RoleId;
-
-            var users = _context.Users
-                .Include(u => u.Role)
-                .Where(u => u.RoleId != adminRoleId)
-                .ToList();
-
-            var customers = _context.Customers
-                .Where(c => c.UserId != 0)
-                .ToList();
-
-            var dict = customers.ToDictionary(c => c.UserId);
-
-            foreach (var user in users)
+            try
             {
-                if (dict.TryGetValue(user.UserId, out var cust))
-                {
-                    user.Customer = cust;
-                }
-            }
+                var adminRoleId = _context.Roles.First(r => r.RoleName == "Администратор").RoleId;
 
-            dgUsers.ItemsSource = users;
+                var users = _context.Users
+                    .Include(u => u.Role)
+                    .Where(u => u.RoleId != adminRoleId)
+                    .ToList();
+
+                var customers = _context.Customers
+                    .Where(c => c.UserId != 0)
+                    .ToDictionary(c => c.UserId);
+
+                var items = new List<AdminUserItem>();
+
+                foreach (var user in users)
+                {
+                    var cust = customers.TryGetValue(user.UserId, out var c) ? c : null;
+
+                    items.Add(new AdminUserItem
+                    {
+                        ID = user.UserId,
+                        Логин = user.Username,
+                        Email = user.Email,
+                        Телефон = user.Phone ?? "",
+                        Имя = cust?.FirstName ?? "",
+                        Фамилия = cust?.LastName ?? "",
+                        Отчество = cust?.Patronymic ?? "",
+                        Роль = user.Role.RoleName,
+                        Статус = user.AccountStatusId == 1 ? "Активен" : "Заблокирован",
+                        Дата_регистрации = user.Created_at
+                    });
+                }
+
+                dgUsers.ItemsSource = items;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки пользователей: {ex.Message}");
+            }
         }
 
         private void DgUsers_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -60,59 +78,69 @@ namespace ChioriApp
 
         private void MenuEditUser_Click(object sender, RoutedEventArgs e)
         {
-            if (dgUsers.SelectedItem is User user)
+            if (dgUsers.SelectedItem is AdminUserItem item)
             {
-                this.Hide();
-                var editWindow = new UserEditWindow(user);
-                bool? result = editWindow.ShowDialog();
-                this.Show();
-                if (result == true)
+                var user = _context.Users
+                    .Include(u => u.Role)
+                    .FirstOrDefault(u => u.UserId == item.ID);
+
+                if (user != null)
                 {
-                    LoadUsers();
+                    this.Hide();
+                    var editWindow = new UserEditWindow(user);
+                    bool? result = editWindow.ShowDialog();
+                    this.Show();
+                    if (result == true)
+                    {
+                        LoadUsers();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь не найден.");
                 }
             }
         }
 
         private void MenuDeleteUser_Click(object sender, RoutedEventArgs e)
         {
-            if (dgUsers.SelectedItem is User user)
+            if (dgUsers.SelectedItem is AdminUserItem item)
             {
-                if (MessageBox.Show($"Удалить пользователя:\n{user.Username} ({user.Email})?\n\nБудут удалены все заказы клиента.",
-                    "Подтверждение удаления",
-                    MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                try
                 {
-                    try
-                    {
-                        if (user.Customer != null)
-                        {
-                            var customerId = user.Customer.CustomerId;
-                            var orders = _context.Orders
-                                .Where(o => o.CustomerId == customerId)
-                                .Include(o => o.OrderItems)
-                                .ToList();
+                    using var transaction = _context.Database.BeginTransaction();
 
-                            foreach (var order in orders)
-                            {
-                                _context.OrderItems.RemoveRange(order.OrderItems);
-                                _context.Orders.Remove(order);
-                            }
+                    var user = _context.Users.Find(item.ID);
+                    if (user == null)
+                    {
+                        MessageBox.Show("Пользователь не найден.");
+                        return;
+                    }
+
+                    var customer = _context.Customers.FirstOrDefault(c => c.UserId == user.UserId);
+                    if (customer != null)
+                    {
+
+                        var orders = _context.Orders.Where(o => o.CustomerId == customer.CustomerId).ToList();
+                        foreach (var order in orders)
+                        {
+                            _context.OrderItems.RemoveRange(_context.OrderItems.Where(oi => oi.OrderId == order.OrderId));
+                            _context.Orders.Remove(order);
                         }
 
-                        if (user.Customer != null)
-                        {
-                            _context.Customers.Remove(user.Customer);
-                        }
-
-                        _context.Users.Remove(user);
-                        _context.SaveChanges();
-
-                        MessageBox.Show("Пользователь удалён.");
-                        LoadUsers();
+                        _context.Customers.Remove(customer);
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Ошибка при удалении:\n{ex.Message}");
-                    }
+
+                    _context.Users.Remove(user);
+                    _context.SaveChanges();
+                    transaction.Commit();
+
+                    MessageBox.Show("Пользователь удалён.");
+                    LoadUsers();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.InnerException?.Message ?? ex.Message}");
                 }
             }
         }

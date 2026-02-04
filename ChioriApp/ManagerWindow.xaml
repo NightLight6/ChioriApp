@@ -25,6 +25,7 @@
                             <ContextMenu x:Key="OrdersContextMenu">
                                 <MenuItem Header="Просмотреть" Click="ViewOrder_Click"/>
                                 <MenuItem Header="Редактировать" Click="BtnEditOrder_Click"/>
+                                <MenuItem Header="Удалить заказ" Click="DeleteOrder_Click" Foreground="Red"/>
                             </ContextMenu>
                         </DataGrid.Resources>
                         <DataGrid.RowStyle>

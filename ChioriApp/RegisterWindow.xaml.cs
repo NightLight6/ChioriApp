@@ -96,7 +96,8 @@ namespace ChioriApp
                 Email = email,
                 Phone = string.IsNullOrWhiteSpace(phone) ? null : phone,
                 RoleId = selectedRole.RoleId,
-                AccountStatusId = 1
+                AccountStatusId = 1,
+                Created_at = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Unspecified)
             };
 
             newUser.PasswordHash = PasswordHasher.ComputeSha256Hash(password);
@@ -120,8 +121,8 @@ namespace ChioriApp
                     FirstName = firstName,
                     LastName = lastName,
                     Patronymic = string.IsNullOrWhiteSpace(patronymic) ? null : patronymic,
-                    BirthDate = dpBirthDate.SelectedDate,
-                    RegistrationDate = DateTime.UtcNow
+                    BirthDate = dpBirthDate.SelectedDate?.Date,
+                    RegistrationDate = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Unspecified)
                 };
                 _context.Customers.Add(customer);
                 _context.SaveChanges();
@@ -132,7 +133,7 @@ namespace ChioriApp
             }
             catch (Exception ex)
             {
-                lblError.Text = $"Ошибка при сохранении: {ex.Message}";
+                lblError.Text = $"Ошибка при сохранении: {ex.Message}\n\n{ex.InnerException?.Message}";
             }
         }
 

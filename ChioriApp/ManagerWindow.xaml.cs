@@ -115,24 +115,37 @@ namespace ChioriApp
         {
             if (dgProducts.SelectedItem is ProductListItem item)
             {
-                if (MessageBox.Show($"Удалить товар '{item.Name}'?", "Подтверждение",
-                    MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                if (MessageBox.Show($"Удалить товар '{item.Name}'?\n\nВнимание: все записи в заказах будут удалены!",
+                    "Подтверждение удаления",
+                    MessageBoxButton.YesNo, MessageBoxImage.Warning) != MessageBoxResult.Yes)
+                    return;
+
+                try
                 {
-                    try
+                    var productId = item.ProductId;
+
+                    var orderItems = _context.OrderItems
+                        .Where(oi => oi.ProductId == productId)
+                        .ToList();
+                    _context.OrderItems.RemoveRange(orderItems);
+
+                    var product = _context.Products.Find(productId);
+                    if (product != null)
                     {
-                        var product = _context.Products.Find(item.ProductId);
-                        if (product != null)
-                        {
-                            _context.Products.Remove(product);
-                            _context.SaveChanges();
-                            LoadProducts();
-                            MessageBox.Show("Товар удалён.");
-                        }
+                        _context.Products.Remove(product);
+                        _context.SaveChanges();
+
+                        LoadProducts();
+                        MessageBox.Show("Товар и его записи в заказах удалены.");
                     }
-                    catch (System.Exception ex)
+                    else
                     {
-                        MessageBox.Show($"Ошибка: {ex.Message}");
+                        MessageBox.Show("Товар не найден.");
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка удаления:\n{ex.InnerException?.Message ?? ex.Message}");
                 }
             }
         }
@@ -140,28 +153,26 @@ namespace ChioriApp
         {
             try
             {
+                var badCustomers = _context.Customers.Where(c => c.UserId <= 0).ToList();
+                if (badCustomers.Any())
+                {
+                    _context.Customers.RemoveRange(badCustomers);
+                    _context.SaveChanges();
+                }
+
                 var customers = _context.Customers
-                    .AsNoTracking()
                     .Include(c => c.User)
                     .ToList();
 
-                var customerList = customers.Select(c =>
+                var customerList = customers.Select(c => new CustomerListItem
                 {
-                    var orders = _context.Orders
-                        .AsNoTracking()
-                        .Where(o => o.CustomerId == c.CustomerId)
-                        .ToList();
-
-                    return new CustomerListItem
-                    {
-                        CustomerId = c.CustomerId,
-                        FirstName = c.FirstName,
-                        LastName = c.LastName,
-                        Patronymic = c.Patronymic ?? "—",
-                        Email = c.User?.Email ?? "—",
-                        Phone = c.User?.Phone ?? "—",
-                        OrderCount = orders.Count
-                    };
+                    CustomerId = c.CustomerId,
+                    FirstName = c.FirstName,
+                    LastName = c.LastName,
+                    Patronymic = c.Patronymic ?? "—",
+                    Email = c.User?.Email ?? "—",
+                    Phone = c.User?.Phone ?? "—",
+                    OrderCount = _context.Orders.Count(o => o.CustomerId == c.CustomerId)
                 }).ToList();
 
                 dgCustomers.ItemsSource = customerList;
@@ -202,24 +213,32 @@ namespace ChioriApp
 
                 try
                 {
-                    var customer = _context.Customers
-                        .Include(c => c.Orders)
-                        .ThenInclude(o => o.OrderItems)
-                        .FirstOrDefault(c => c.CustomerId == item.CustomerId);
+                    var customerId = item.CustomerId;
 
-                    if (customer == null)
+                    var orderIds = _context.Orders
+                        .Where(o => o.CustomerId == customerId)
+                        .Select(o => o.OrderId)
+                        .ToList();
+
+                    if (orderIds.Any())
                     {
-                        MessageBox.Show("Клиент не найден.");
-                        return;
+                        var orderItems = _context.OrderItems
+                            .Where(oi => orderIds.Contains(oi.OrderId))
+                            .ToList();
+                        _context.OrderItems.RemoveRange(orderItems);
+
+                        var orders = _context.Orders
+                            .Where(o => o.CustomerId == customerId)
+                            .ToList();
+                        _context.Orders.RemoveRange(orders);
                     }
 
-                    foreach (var order in customer.Orders.ToList())
+                    var customer = _context.Customers.Find(customerId);
+                    if (customer != null)
                     {
-                        _context.OrderItems.RemoveRange(order.OrderItems);
-                        _context.Orders.Remove(order);
+                        _context.Customers.Remove(customer);
                     }
 
-                    _context.Customers.Remove(customer);
                     _context.SaveChanges();
 
                     LoadCustomers();
@@ -227,7 +246,42 @@ namespace ChioriApp
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ошибка при удалении:\n{ex.Message}");
+                    MessageBox.Show($"Ошибка удаления:\n{ex.InnerException?.Message ?? ex.Message}");
+                }
+            }
+        }
+
+        private void DeleteOrder_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgOrders.SelectedItem is OrderListItem item)
+            {
+                if (MessageBox.Show($"Удалить заказ #{item.OrderNumber}?\nЭто действие необратимо.",
+                    "Подтверждение удаления",
+                    MessageBoxButton.YesNo, MessageBoxImage.Warning) != MessageBoxResult.Yes)
+                    return;
+
+                try
+                {
+                    var order = _context.Orders
+                        .Include(o => o.OrderItems)
+                        .FirstOrDefault(o => o.OrderId == item.OrderId);
+
+                    if (order == null)
+                    {
+                        MessageBox.Show("Заказ не найден.");
+                        return;
+                    }
+
+                    _context.OrderItems.RemoveRange(order.OrderItems);
+                    _context.Orders.Remove(order);
+                    _context.SaveChanges();
+
+                    LoadOrders();
+                    MessageBox.Show("Заказ удалён.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка удаления заказа:\n{ex.InnerException?.Message ?? ex.Message}");
                 }
             }
         }
